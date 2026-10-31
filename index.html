@@ -1,0 +1,277 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Aakash Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Placeholder portfolio homepage for Aakash. All content is fictional sample text.">
+<style>
+/* Layout: left-aligned editorial hero with a drafting-grid panel, then an About spread, then a three-up project row. */
+:root {
+  --bg: #edf0f2;
+  --surface: #f8f9fa;
+  --ink: #101c26;
+  --muted: #475766;
+  --line: #c9d2d9;
+  --accent: #0b6e69;
+  --accent-ink: #ffffff;
+  --accent-soft: #d3e8e5;
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c1318;
+    --surface: #141e26;
+    --ink: #e6ecf0;
+    --muted: #9baab6;
+    --line: #25333e;
+    --accent: #5cd1c6;
+    --accent-ink: #06201e;
+    --accent-soft: #12302e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c1318;
+  --surface: #141e26;
+  --ink: #e6ecf0;
+  --muted: #9baab6;
+  --line: #25333e;
+  --accent: #5cd1c6;
+  --accent-ink: #06201e;
+  --accent-soft: #12302e;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  padding-block: 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 68rem; margin-inline: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.skip {
+  position: absolute; left: 16px; top: -4rem;
+  background: var(--accent); color: var(--accent-ink);
+  padding: .6rem 1rem; border-radius: 4px; z-index: 20; text-decoration: none; font-weight: 600;
+}
+.skip:focus { top: 8px; }
+
+/* Header */
+.site-header {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: .75rem 1.5rem; padding-block: 1.25rem; border-bottom: 1px solid var(--line);
+}
+.brand { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; text-decoration: none; letter-spacing: .01em; }
+.site-nav ul { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; list-style: none; margin: 0; padding: 0; }
+.site-nav a {
+  display: inline-block; padding: .35rem 0; text-decoration: none; color: var(--muted);
+  font-size: .95rem; border-bottom: 2px solid transparent;
+}
+.site-nav a:hover { color: var(--ink); border-bottom-color: var(--accent); }
+
+/* Hero */
+.hero {
+  display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 3rem; align-items: center; padding-block: clamp(2.5rem, 7vw, 5.5rem);
+}
+.eyebrow {
+  font-family: var(--font-mono); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 1rem;
+}
+.hero h1 {
+  font-family: var(--font-display); font-weight: 700; margin: 0 0 1.25rem;
+  font-size: clamp(3.4rem, 11vw, 7rem); line-height: .95; letter-spacing: -.02em; text-wrap: balance;
+}
+.hero .lede { font-size: 1.15rem; color: var(--muted); max-width: 34rem; margin: 0 0 2rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.btn {
+  display: inline-block; padding: .8rem 1.4rem; border-radius: 4px; text-decoration: none;
+  font-weight: 600; font-size: .95rem; border: 2px solid var(--accent);
+}
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { filter: brightness(1.08); }
+.btn-ghost { color: var(--ink); background: transparent; }
+.btn-ghost:hover { background: var(--accent-soft); }
+
+.hero-panel { margin: 0; }
+.drafting {
+  aspect-ratio: 1 / 1; width: 100%; max-width: 100%;
+  border: 1px solid var(--line); border-radius: 6px; position: relative; overflow: hidden;
+  background-color: var(--surface);
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 12.5% 12.5%;
+}
+.drafting::before {
+  content: ""; position: absolute; width: 52%; aspect-ratio: 1; border-radius: 50%;
+  left: 12%; top: 16%; background: var(--accent);
+}
+.drafting::after {
+  content: ""; position: absolute; width: 46%; height: 34%; right: 9%; bottom: 12%;
+  border: 2px solid var(--ink); background: var(--accent-soft);
+}
+.hero-panel figcaption {
+  font-family: var(--font-mono); font-size: .75rem; color: var(--muted); margin-top: .6rem; letter-spacing: .04em;
+}
+
+/* Sections */
+section { padding-block: clamp(2.5rem, 6vw, 4.5rem); border-top: 1px solid var(--line); }
+.section-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1.5rem; margin-bottom: 2rem; }
+h2 { font-family: var(--font-display); font-size: clamp(1.9rem, 4.5vw, 2.8rem); line-height: 1.1; margin: 0; text-wrap: balance; }
+.section-note { font-family: var(--font-mono); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0; }
+
+/* About */
+.about { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 3rem; }
+.about p { margin: 0 0 1.1rem; max-width: 40rem; }
+.facts { margin: 0; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); padding: 1.25rem 1.5rem; align-self: start; }
+.facts div { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: .75rem; padding-block: .7rem; border-bottom: 1px solid var(--line); }
+.facts div:last-child { border-bottom: 0; }
+.facts dt { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-top: .15rem; }
+.facts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+
+/* Projects */
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.thumb { aspect-ratio: 16 / 10; width: 100%; max-width: 100%; border-bottom: 1px solid var(--line); background-color: var(--accent-soft); }
+.thumb-a { background-image: repeating-linear-gradient(135deg, transparent 0 14px, var(--accent) 14px 16px); }
+.thumb-b { background-image: radial-gradient(circle at 30% 40%, var(--accent) 0 18%, transparent 18.5%), radial-gradient(circle at 70% 65%, var(--ink) 0 9%, transparent 9.5%); }
+.thumb-c { background-image: linear-gradient(90deg, var(--accent) 0 34%, transparent 34% 38%, var(--ink) 38% 62%, transparent 62% 66%, var(--line) 66% 100%); background-size: 100% 46%; background-repeat: no-repeat; background-position: 0 50%; }
+.card-body { padding: 1.25rem 1.4rem 1.5rem; display: flex; flex-direction: column; gap: .6rem; flex: 1; }
+.card h3 { font-family: var(--font-display); font-size: 1.35rem; line-height: 1.2; margin: 0; }
+.card p { margin: 0; color: var(--muted); font-size: .95rem; }
+.tags { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; margin: auto 0 0; padding: .6rem 0 0; }
+.tags li { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .05em; padding: .15rem .55rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); }
+.status { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--line); padding-block: 2rem 2.5rem; display: flex; flex-wrap: wrap; gap: .5rem 2rem; justify-content: space-between; color: var(--muted); font-size: .9rem; }
+.site-footer p { margin: 0; }
+
+@media (max-width: 52rem) {
+  .hero, .about { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .hero-panel { max-width: 22rem; }
+  .cards { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 30rem) {
+  .site-header { padding-block: 1rem; }
+  .facts div { grid-template-columns: minmax(0, 1fr); gap: .1rem; }
+  .btn { flex: 1 1 100%; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<div class="wrap">
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Aakash, back to top">Aakash</a>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div id="top" class="hero">
+      <div>
+        <p class="eyebrow">Placeholder portfolio</p>
+        <h1>Aakash</h1>
+        <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#work">See placeholder work</a>
+          <a class="btn btn-ghost" href="#about">About this page</a>
+        </div>
+      </div>
+      <figure class="hero-panel">
+        <div class="drafting" role="img" aria-label="Abstract placeholder artwork made of a grid, a circle and a rectangle"></div>
+        <figcaption>Fig. 0 · Placeholder artwork</figcaption>
+      </figure>
+    </div>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="section-head">
+        <h2 id="about-title">About</h2>
+        <p class="section-note">Sample text only</p>
+      </div>
+      <div class="about">
+        <div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum, cras mattis consectetur purus sit amet fermentum.</p>
+          <p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo, aenean lacinia bibendum nulla sed consectetur.</p>
+          <p>This page is a template. Every sentence, label and project below is invented filler, and nothing here describes a real person, employer, client or result.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>Name</dt><dd>Aakash</dd></div>
+          <div><dt>Role</dt><dd>Placeholder role</dd></div>
+          <div><dt>Focus</dt><dd>Lorem ipsum, dolor sit</dd></div>
+          <div><dt>Status</dt><dd>Template, not real</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="work" aria-labelledby="work-title">
+      <div class="section-head">
+        <h2 id="work-title">Selected work</h2>
+        <p class="section-note">Three placeholder projects</p>
+      </div>
+      <ul class="cards">
+        <li class="card">
+          <article style="display:contents">
+            <div class="thumb thumb-a" role="img" aria-label="Placeholder thumbnail with diagonal stripes"></div>
+            <div class="card-body">
+              <span class="status">Placeholder project</span>
+              <h3>Project One</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+              <ul class="tags" aria-label="Placeholder tags"><li>Lorem</li><li>Ipsum</li></ul>
+            </div>
+          </article>
+        </li>
+        <li class="card">
+          <article style="display:contents">
+            <div class="thumb thumb-b" role="img" aria-label="Placeholder thumbnail with circles"></div>
+            <div class="card-body">
+              <span class="status">Placeholder project</span>
+              <h3>Project Two</h3>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod.</p>
+              <ul class="tags" aria-label="Placeholder tags"><li>Dolor</li><li>Sit amet</li></ul>
+            </div>
+          </article>
+        </li>
+        <li class="card">
+          <article style="display:contents">
+            <div class="thumb thumb-c" role="img" aria-label="Placeholder thumbnail with colored bars"></div>
+            <div class="card-body">
+              <span class="status">Placeholder project</span>
+              <h3>Project Three</h3>
+              <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum, nulla vitae elit libero a pharetra augue.</p>
+              <ul class="tags" aria-label="Placeholder tags"><li>Elit</li><li>Tempor</li></ul>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Aakash. Placeholder template.</p>
+    <p>All content is fictional sample text.</p>
+  </footer>
+</div>
+
+</body></html>
